@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>About Us</title>
+        <style>
+            header{
+                position: fixed;
+                background-color: #003d99;
+                width: 100%; 
+            }
+            body{
+			font-family: Georgia;
+			background-color:#f2f6ff
+		}
+            .navbar{
+                padding:24px ;
+                padding-left: 1350px;                 
+                height: 50px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #99c2ff;
+                width: 100%;
+        	}
+        .menu{
+			padding:12px; 
+			font-size: large;
+			font-weight:bold;
+			color: Black;
+			}
+            h1{
+                font-size: 55px;
+                font-weight: 700;
+            }
+            .top{
+                margin: 100px 15px 15px 15px;
+            }
+            p{
+                font-size: 25px;
+            }
+            .n1
+            {
+                background-color: #80b3ff;
+                font-size: 20px;
+                width: 150px;
+                padding: 25px;
+                margin: 15px 680px 10px;
+            }
+            .n2
+            {
+                background-color: #80b3ff;
+                font-size: 20px;
+                width: 155px;
+                padding: 25px;
+                margin: 15px 750px 10px;
+            }
+            a:hover{
+		background-color:white;
+		color:black;
+	}
+   
+        </style>
+    </head>
+    <body>
+        <header class ="nav">
+            <div class="navbar">
+                <a href="{{ url_for('home')}}"><span class="menu">Home</span></a>
+                <a href="{{ url_for('index')}}"><span class="menu">Predict</span></a>
+                <a href="{{ url_for('demo')}}"><span class="menu">About Us</span></a>
+            </div>
+        </header> 
+        <div class="top">
+            <h1>ABOUT US</h1>
+            <p>
+                We are the team of 4. We are from GNITS studying in 2nd year CSE-C.
+                We are here to explain about Insurance and mainly concentrated on Medical Insurance and its premium prediction. 
+                Our Main Aim is to make people aware of insurances available and also how much insurance premium they should pay
+            for medical insurane based on some details.
+
+           </p>
+        </div>
+
+        <div>
+
+            <div class="n1">
+                Bashetty Shreya<br>
+                19251A05D1
+            </div>
+            <div class="n2">
+                Mudavath Saroja<br>
+                19251A05G2
+            </div>
+            <div class="n1">
+                Pallerla Saipriya<br>
+                19251A05G5
+            </div>
+            <div class="n2">
+                Yada Vaishnavi<br>
+                19251A05J0
+            </div>
+        </div>
+        
+    </body>
+
+</html>

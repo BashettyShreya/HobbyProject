@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Home page</title>
+	<style>
+		body{
+			font-family: Georgia;
+			background-color:#f2f6ff;
+			padding-bottom: 100px;;
+		}
+		p{
+			font-size: large;
+		}
+		.menu{
+			padding:12px;
+			font-size: large;
+			font-weight:bold;
+			color: Black;
+			}
+		#heading{
+			font-size: 70px;
+			padding-top: 50px;
+				
+			}
+
+		.food{
+			align-items: center;
+			padding: 24px;
+			}
+		.center-alignment{
+			text-align: center;	
+						}
+        .left-alignment{
+            text-align:left;
+        }
+		.info{
+			display: flex;
+			flex-direction: row;
+        	align-items: center;
+			background-color: rgb(228, 239, 243);
+
+		}
+		.img{
+			margin-left: 400px;
+		}
+		.img1{
+			display: flex;
+			flex-direction: row;
+        	align-items: center;
+			padding: 15px 125px;
+		}
+		.list{
+			font-size: large;
+		}
+		header{
+			
+			position: fixed; 
+			
+		}
+		ul{
+			list-style-type:none;
+			margin:0;
+			padding:0;
+			overflow:hidden;
+	}
+	li a:hover{
+		background-color: white;
+		color:blue;
+	}
+	a:hover{
+		background-color:white;
+		color:black;
+	}
+	.navbar{
+		padding:24px ;
+                padding-left: 1300px;                 
+                height: 50px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #99c2ff;
+                width: 100%;
+	}
+    </style>
+</head>
+<body>
+	<!-- other html elements -->
+	<header class ="nav">
+	<div class="navbar">
+		<a href="{{ url_for('home')}}"><span class="menu">Home</span></a>
+		<a href="{{ url_for('index')}}"><span class="menu">Predict</span></a>
+		<a href="{{ url_for('demo')}}"><span class="menu">About Us</span></a>
+	</div>
+    </header>
+	<div>
+	<h2 id="heading"><b>Welcome</b><br>Get clarified..</h2></div>
+	<h1 style="font-size:50px">Want to know what <b>medical insurance charge</b>  is....?</h1>
+	<div class="info">
+		<ul class="list">
+			<li style="padding: 12px;margin-bottom: 5px;"><a class="food" href="#imginsurance"><b>What is Insurance?</b></a></li> 
+			<li style="padding: 12px;margin-bottom: 5px;"><a class="food" href="#imgtypes">Types of Insurance</a></li>
+			<li style="padding: 12px;margin-bottom: 5px;"><a class="food" href="#imgmed">What is <b>medical insurance</b>?</a></li>
+			<li style="padding: 12px;margin-bottom: 5px;"><a class="food" href="#Why should you opt?">why should I opt it?</a></li>
+			<li style="padding: 12px;margin-bottom: 5px;"><a class="food" href="#Predit">How can i predict my insurance premium charge?</a></li>
+			
+		</ul>
+		<img class="img" id="imginsurance" src="https://ak.picdn.net/shutterstock/videos/8233387/thumb/1.jpg" alt="Insurance" width="400px" height="300px ">
+	</div>
+
+    </div>
+
+	<div>
+		<p><b><u>Insurance</u></b> is a contract ,represented by a policy in which an individualor entity receives <b>financial protection</b> or reimbusement against losses from an insurance company.Inorder to select the best policy for you or your family , it is important to pay attention to the three critical components  of most insurance policies- the deductible,premium, and the policy limit.<br>Policy premium- A policy premium is its price, typically expresses as a monthly cost.<br>Policy limit-It is the maximum amount that an insurer will pay under a policy for a covered loss.<br>Decductible-It is the specific amount the policy holder must pay out-of-pocket before the insurer pays a claim.</p>
+    </div>
+
+    <div class="img1">
+		<img id="imgtypes" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGluc3VyYW5jZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="Types" width="400px" height="300px"/>
+    	<img id="imgtypes" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPO-4cKAG8IABVn7fKImBTeTBWMIVGZJhKEg&usqp=CAU" alt="Types" width="400px" height="300px"/>
+		<img id="imgtypes" src="https://www.probusinsurance.com/wp-content/uploads/2019/07/16.jpg" alt="Types" width="400px" height="300px"/>
+	</div>
+	<div>
+		<p><b>Types of Insurance</b></p>
+        <ul>
+            <li>Car Insurance. </li>
+            <li>Home Insurance.</li>
+            <li>Pet Insurance.</li>
+            <li>Life Insurance.</li>
+            <li>Health Insurance.</li>
+            <li>Liability Insurance....</li>
+        </ul>
+	</div>
+	<div class="center-alignment">
+		<marquee scrollamount="20"><img id="imgmed" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMWZ1dkWMW23yvVx5ErPUBzrjS9O8vroIMDg&usqp=CAU" alt="Types" width="450px" height="350px"/></marquee>
+		<p><b>Medical Insurance</b> is taken out to cover the cost of medical and surgical expenses incurred by the insured.The insured either has to pay such expenses out-of-pocket or is later reimbusment by the insurer or the insurance company settles the bills directly with the hospital.</p>
+	</div>
+
+	<div class="center-alignment">
+		<img id="Why should you opt?" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRuKcQ5WBAh-xc5v5SPhjoCTfXz09CJ4eHHA&usqp=CAU" alt="Why should you opt?" width="450px" height="350px"/>
+		<br><p><b style="font-size: 25px;">why u should opt?</b><br><br>The healthcare industry is a complex system with many moving parts. One issue in this field is the misuse of medical insurance systems. Medical insurance is one of the ways that people in various countries ﬁnance their medical needs. The WHO estimates that 150 million people worldwide suffer ﬁnancial catastrophe each year because of out-of-pocket expenses for their healthcare needs. Medical Insurance is a medical coverage that helps you meet your medical expenses by offering financial assistance. Due to the high cost of hospitalization expenses, it is important to have a health insurance plan in place. In the current pandemic situation or another emergency, medical insurance plays a vital role in safeguarding your finances. Medical insurance plans not only equips you to tackle unexpected medical expenses, but it also helps you save tax up to Rs.1 lakh as per section 80 D of the Income Tax Act, 1961. Now, don't let your health take a back seat and get yourself insured.</p>
+        <p></p>
+	</div>
+
+	<div class="center-alignment">
+		<img id="Predit" src="data:image/jpeg;base64,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" alt="Predit" width="450px" height="350px"/>
+		<br><br><button style="font-size: 25px; background-color: lightblue; color: lightcyan; width: 25%; height: 15%;"><a href="{{ url_for('index')}}">Do you want to predict charge?</a></button><br>
+	</div>
+</body>
+	
+</html>

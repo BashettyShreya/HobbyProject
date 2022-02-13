@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Document</title>
+    <script>
+        function validateForm() {
+          let age = document.forms["myForm"]["age"].value;
+          if (age == "") {
+            alert("Age must be filled out");
+            return false;
+          }
+          let Gender = document.forms["myForm"]["Gender"].value;
+          if (Gender == "") {
+            alert("Gender must be selected");
+            return false;
+          }
+          let BMI = document.forms["myForm"]["BMI"].value;
+          if (BMI == "") {
+            alert("BMI must be filled out");
+            return false;
+          }
+          let smoker = document.forms["myForm"]["Smoker"].value;
+          if (smoker == "") {
+            alert("Smoker or not must be choose anything");
+            return false;
+          }
+          let children = document.forms["myForm"]["Children"].value;
+          if (children == "") {
+            alert("no. of children must be filled out");
+            return false;
+          }
+          let Region = document.forms["myForm"]["Region"].value;
+          if (Region == "") {
+            alert("Region must be filled out");
+            return false;
+          }
+        }
+        </script>
+    <style>
+        body{
+			font-family: Georgia;
+			background-color:#f2f6ff
+		}
+        .form
+        {
+            margin: 50px 50px;
+        }
+        .center {
+            margin: 150px 500px;
+            width: 30%;
+            border: 3px solid rgb(51, 51, 160);
+            padding: 50px 50px;
+            background-image: url("https://image.shutterstock.com/image-photo/health-medical-life-insurance-whole-260nw-740206291.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .form-input{
+            margin-left: 5px;
+        }
+        .navbar{
+          padding:24px ;
+                padding-left: 1300px;                 
+                height: 50px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: #99c2ff;
+                width: 100%;
+	}
+  a:hover{
+		background-color:white;
+		color:black;
+	}
+    .menu{
+			padding:12px;
+			font-size: large;
+			font-weight:bold;
+			color: Black;
+			}
+            body{
+			font-family: Georgia;
+			background-color:#f2f6ff
+		}
+        
+    </style>
+</head>
+<body>
+    <header class ="nav">
+        <div class="navbar">
+            <a href="{{ url_for('home')}}"><span class="menu">Home</span></a>
+            <a href="{{ url_for('index')}}"><span class="menu">Predict</span></a>
+            <a href="{{ url_for('demo')}}"><span class="menu">About Us</span></a>
+        </div>
+        </header>
+    
+
+    <div class="center">  
+    <div class="login ">
+        <h1 style="align-items: center;"> Medical Insurance Charge Prediction </h1>
+    <form name="myForm" class="form" action="/predict" onsubmit="return validateForm()" method="POST">
+        <span>Age:      </span><input class="form-input" type = "text" name = "age" placeholder = "Enter Age"><br><br>
+        <!-- <span>Gender   </span><input class="form-input" type = "text" name = "Gender" placeholder = "Enter Gender"><br><br> -->
+        <span>Gender:   </span>
+        <input class="form-input" type = "radio" name = "Gender"value="1" >Female</input>
+        <input class="form-input" type = "radio" name = "Gender"value="0">Male</input>
+        <br><br>
+        <span>BMI:      </span><input class="form-input" type = "text" name = "BMI" placeholder = "Enter BMI"><br><br>
+        <span>Dependences: </span><input class="form-input" type = "text" name = "Children" placeholder = "Enter Children"><br><br> 
+        <span>Smoker:   </span>
+        <input class="form-input" type = "radio" name = "Smoker" value="0">Yes</input>
+        <input class="form-input" type = "radio" name = "Smoker" value="1">No</input>
+        <br><br>
+        <span>Region:   </span>
+        <select name="Region" id="Region">
+            <option value="">select</option>
+            <option value="0">South East</option>
+            <option value="1">South West</option>
+            <option value="2">North East</option>
+            <option value="3">North West</option>
+        </select><br><br>
+	<span>Salary      </span><input class="form-input" type = "number" name = "" placeholder = "Enter Salary(optional)"><br><br>
+          <!-- <input class="form-input" type = "text" name = "Region" placeholder = "Enter Region">  -->
+        <button class="btn btn-success">Predict</button>
+    </form>
+    <div class = "row">
+        {% if prediction %}
+        <h2 class = "text-warning">Predicted Charge is {{prediction}}</h2>
+	<h2>Amount you get back when needed {{tot}}</h2>
+        <h2>Amount refunded if policy was cancelled within 1 month {{r1}}</h2>
+        <h2>Amount refunded if policy was cancelled within 3 months {{r2}}</h2>
+        <h2>Amount refunded if policy was cancelled within 6 months {{r3}}</h2>
+        <h2>Amount will not be refunded if policy was cancelled after 6 months</h2><br>
+        {% endif %}
+    </div>
+    </div>
+    </div>
+    
+</body>
+</html>
